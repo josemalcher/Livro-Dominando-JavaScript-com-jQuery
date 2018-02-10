@@ -51,8 +51,110 @@ A figura a seguir nos dá uma ideia melhor de como o servidor vai receber menos 
 
 ---
 
-## <a name="parte3"></a>
+## <a name="parte3">3 - Adicionando JavaScript</a>
 
+Document Object Model (ou Objeto Modelo do Documento), e é criada automaticamente pelo browser toda vez que carregamos um arquivo XML ou HTML válido. Esse arquivo é chamado de Documento, e cada item dentro dele (textos, imagens, botões, caixas de texto) é chamado genericamente de Elemento.
+
+![ExibindoDOMcomoArvore.PNG](https://github.com/josemalcher/Livro-Dominando-JavaScript-com-jQuery/blob/master/img_git/cap3_ExibindoDOMcomoArvore.PNG?raw=true)
+
+### 3.4 LOCALIZANDO O VALOR TOTAL DO CARRINHO
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CAP 3 - Adicinado JS</title>
+</head>
+<body>
+    
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <div>R$ 29,90</div></dif>
+                </td>
+                <td>
+                    <input type="number">
+                </td>
+            </tr>
+        </tbody>
+        <tr>
+            <td></td>
+            <td>Total da compra</td>
+            <td><div id="total">R$ 29,90</div></td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+<script type="text/javascript"> //somente para estudos...isso aqui!!!
+    
+    //var total = document.getElementById("total");
+    //alert(total.innerHTML);
+
+    var total = document.getElementById("total");
+    var formattedtext = floatToMoneyText(moneyTxtFLoat(total.innerHTML));
+    alert(formattedtext === total.innerHTML); // true
+
+    function moneyTxtFLoat(text){
+        var cleanText = text.replace("R$ ", "").replace(",", ".");
+        return parseFloat(cleanText);
+    }
+
+    function floatToMoneyText(value){
+        var text = (value < 1 ? "0" : "") + Math.floor(value * 100);
+        text = "R$ " + text;
+        return text.substr(0, text.length - 2) + "," + text.substr(-2);
+    }
+    function readTotal(){
+        var total = document.getElementById("total");
+        return moneyTxtFLoat(total.innerHTML);
+    }
+    
+    // 3.6 ALTERANDO O CAMPO DO TOTAL
+    function writeTotal(value){
+        var total = document.getElementById("total");
+        total.innerHTML = floatToMoneyText(value);
+    }
+    
+
+</script>
+</html>
+```
+### 3.5 USANDO === E ==
+
+A linha iniciada por => indica o resultado da expressão e não deve ser digitada:
+```javascript
+2 == 2;
+=> true
+1 == "1";
+=> true
+0 == [];
+=> true
+0 == "";
+=> true
+```
+
+Porém, quando você utiliza === , o JavaScript não converte tipos e verifica a igualdade dos valores, sem truques:
+
+```javascript
+2 === 2;
+=> true
+1 === "1";
+=> false
+0 === [];
+=> false
+0 === "";
+=> false
+```
+A menos que você tenha um motivo realmente bom para usar o operador de equivalência, use sempre === para evitar que erros
+
+### 3.7 INCLUINDO UM ARQUIVO JAVASCRIPT NA PÁGINA
+
+<script src='javascripts/rodus.js' type='text/javascript'></script>
 
 [Voltar ao Índice](#indice)
 
