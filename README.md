@@ -153,8 +153,132 @@ Porém, quando você utiliza === , o JavaScript não converte tipos e verifica a
 A menos que você tenha um motivo realmente bom para usar o operador de equivalência, use sempre === para evitar que erros
 
 ### 3.7 INCLUINDO UM ARQUIVO JAVASCRIPT NA PÁGINA
-
+```html
 <script src='javascripts/rodus.js' type='text/javascript'></script>
+```
+
+### 3.10 CALCULANDO OS SUBTOTAIS DOS ITENS
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='javascripts/rodus.js' type='text/javascript'></script>
+    <title>CAP 3 - Adicinado JS</title>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr class="produto">
+                <td>
+                    <div class="price">R$ 29,90</div>
+                </td>
+                <td>
+                    <input type="number" class="quantity">
+                </td>
+            </tr>
+            <tr class="produto">
+                <td>
+                    <div class="price">R$ 59,90</div>
+                </td>
+                <td>
+                    <input type="number" class="quantity">
+                </td>
+            </tr>
+            <tr class="produto">
+                <td>
+                    <div class="price">R$ 99,90</div>
+                </td>
+                <td>
+                    <input type="number" class="quantity">
+                </td>
+            </tr>
+        </tbody>
+        <tr>
+            <td></td>
+            <td>Total da compra</td>
+            <td>
+                <div id="total">R$ 189,70</div>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+```
+
+```javascript
+//var total = document.getElementById("total");
+//alert(total.innerHTML);
+
+//var total = document.getElementById("total");
+//var formattedtext = floatToMoneyText(moneyTxtFLoat(total.innerHTML));
+//alert(formattedtext === total.innerHTML); // true
+
+function moneyTxtFLoat(text) {
+    var cleanText = text.replace("R$ ", "").replace(",", ".");
+    return parseFloat(cleanText);
+}
+
+function floatToMoneyText(value) {
+    var text = (value < 1 ? "0" : "") + Math.floor(value * 100);
+    text = "R$ " + text;
+    return text.substr(0, text.length - 2) + "," + text.substr(-2);
+}
+function readTotal() {
+    var total = document.getElementById("total");
+    return moneyTxtFLoat(total.innerHTML);
+}
+
+// 3.6 ALTERANDO O CAMPO DO TOTAL
+function writeTotal(value) {
+    var total = document.getElementById("total");
+    total.innerHTML = floatToMoneyText(value);
+}
+//writeTotal(3.143302);     
+
+/* var produtos = document.getElementsByClassName("produto");
+console.log(produtos);
+
+for(var pos = 0; pos < produtos.length; pos++) {
+    var priceElements =  produtos[pos].getElementsByClassName("price");
+    var priceText = priceElements[0].innerHTML;
+    var price = moneyTxtFLoat(priceText);
+    console.log(price);
+} */
+function calculateTotalProducts() {
+    var produtos = document.getElementsByClassName("produto");
+
+    var totalProdutos = 0;
+
+    for (var pos = 0; pos < produtos.length; pos++) {
+        var priceElements = produtos[pos].getElementsByClassName("price");
+        var priceText = priceElements[0].innerHTML;
+        var price = moneyTextToFloat(priceText);
+
+        var qtyElements = produtos[pos].getElementsByClassName("quantity");
+        var qtyText = qtyElements[0].value;
+        var quantity = moneyTextToFloat(qtyText);
+
+        var subtotal = quantity * price;
+
+        totalProdutos += subtotal;
+
+    }
+
+    return totalProdutos;
+}
+
+```
+
+
 
 [Voltar ao Índice](#indice)
 
