@@ -277,7 +277,20 @@ function calculateTotalProducts() {
 }
 
 ```
+### 3.11 ENTENDENDO EVENTOS
 
+```javascript
+function quantidadeMudou() {
+    writeTotal(calculateTotalProducts());
+}
+function onDocumentoLoad() {
+    var textEdits = document.getElementsByClassName("quantity");
+    for(var i = 0; i < textEdits.length; i++) {
+        textEdits[i].onchange = quantidadeMudou;
+    }
+}
+window.onload = onDocumentoLoad;
+```
 
 
 [Voltar ao Índice](#indice)

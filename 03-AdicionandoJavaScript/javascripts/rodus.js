@@ -5,7 +5,7 @@
 //var formattedtext = floatToMoneyText(moneyTxtFLoat(total.innerHTML));
 //alert(formattedtext === total.innerHTML); // true
 
-function moneyTxtFLoat(text) {
+function moneyTextToFloat(text) {
     var cleanText = text.replace("R$ ", "").replace(",", ".");
     return parseFloat(cleanText);
 }
@@ -17,7 +17,7 @@ function floatToMoneyText(value) {
 }
 function readTotal() {
     var total = document.getElementById("total");
-    return moneyTxtFLoat(total.innerHTML);
+    return moneyTextToFloat(total.innerHTML);
 }
 
 // 3.6 ALTERANDO O CAMPO DO TOTAL
@@ -38,14 +38,13 @@ for(var pos = 0; pos < produtos.length; pos++) {
 } */
 function calculateTotalProducts() {
     var produtos = document.getElementsByClassName("produto");
-
     var totalProdutos = 0;
 
     for (var pos = 0; pos < produtos.length; pos++) {
         var priceElements = produtos[pos].getElementsByClassName("price");
         var priceText = priceElements[0].innerHTML;
         var price = moneyTextToFloat(priceText);
-
+        
         var qtyElements = produtos[pos].getElementsByClassName("quantity");
         var qtyText = qtyElements[0].value;
         var quantity = moneyTextToFloat(qtyText);
@@ -58,3 +57,14 @@ function calculateTotalProducts() {
 
     return totalProdutos;
 }
+
+function quantidadeMudou() {
+    writeTotal(calculateTotalProducts());
+}
+function onDocumentoLoad() {
+    var textEdits = document.getElementsByClassName("quantity");
+    for(var i = 0; i < textEdits.length; i++) {
+        textEdits[i].onchange = quantidadeMudou;
+    }
+}
+window.onload = onDocumentoLoad;
