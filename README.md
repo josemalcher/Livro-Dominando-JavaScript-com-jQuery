@@ -30,14 +30,21 @@ Repsitório: https://github.com/josemalcher/Livro-Dominando-JavaScript-com-jQuer
 
 ---
 
-## <a name="parte1"></a>
+## <a name="parte1">1 - Apresentação</a>
+
+- Lista: http://forum.casadocodigo.com.br/
+- repo do livro: https://github.com/pbalduino/livro-js-jquery
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte2"></a>
+## <a name="parte2">2 - Refazendo uma loja virtual</a>
+
+A figura a seguir nos dá uma ideia melhor de como o servidor vai receber menos requisições.
+
+![cap2_EsquemaDeRequisicoes_ao_servidor](https://github.com/josemalcher/Livro-Dominando-JavaScript-com-jQuery/blob/master/img_git/cap2_EsquemaDeRequisicoes_ao_servidor.png?raw=true)
 
 
 [Voltar ao Índice](#indice)
