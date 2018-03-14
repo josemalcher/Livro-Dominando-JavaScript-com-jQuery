@@ -15,6 +15,7 @@ function floatToMoneyText(value) {
     text = "R$ " + text;
     return text.substr(0, text.length - 2) + "," + text.substr(-2);
 }
+
 function readTotal() {
     var total = document.getElementById("total");
     return moneyTextToFloat(total.innerHTML);
@@ -25,7 +26,8 @@ function writeTotal(value) {
     var total = document.getElementById("total");
     total.innerHTML = floatToMoneyText(value);
 }
-//writeTotal(3.143302);     
+
+//writeTotal(3.143302);
 
 /* var produtos = document.getElementsByClassName("produto");
 console.log(produtos);
@@ -44,7 +46,7 @@ function calculateTotalProducts() {
         var priceElements = produtos[pos].getElementsByClassName("price");
         var priceText = priceElements[0].innerHTML;
         var price = moneyTextToFloat(priceText);
-        
+
         var qtyElements = produtos[pos].getElementsByClassName("quantity");
         var qtyText = qtyElements[0].value;
         var quantity = moneyTextToFloat(qtyText);
@@ -58,6 +60,7 @@ function calculateTotalProducts() {
     return totalProdutos;
 }
 
+/*
 function quantidadeMudou() {
     writeTotal(calculateTotalProducts());
 }
@@ -67,4 +70,14 @@ function onDocumentoLoad() {
         textEdits[i].onchange = quantidadeMudou;
     }
 }
+*/
+function onDocumentoLoad() {
+    var textEdits = document.getElementsByClassName("quantity");
+    for(var i = 0; i < textEdits.length ; i++){
+        textEdits[i].onchange = function () {
+            writeTotal(calculateTotalProducts());
+        }
+    }
+}
+
 window.onload = onDocumentoLoad;

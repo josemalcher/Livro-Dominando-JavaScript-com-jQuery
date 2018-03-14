@@ -297,7 +297,55 @@ window.onload = onDocumentoLoad;
 
 ---
 
-## <a name="parte4"></a>
+## <a name="parte4">CAPÍTULO 4 - UM JAVASCRIPT DIFERENTE EM CADA NAVEGADOR</a>
+
+#### 4.2 QUANDO NÃO EXISTE UMA DETERMINADA FUNÇÃO
+
+```javascript
+if (document.getElementsByClassName == undefined) {
+    alert("getElementsByClassName not found");
+    document.getElementsByClassName = function(className) {
+        alert("Regozijai-vos, usuários de Internet Explorer");
+    }
+}
+
+var todosElementos = document.getElementsByTagName("*");
+var resultados = [];
+var elemento;
+for (var i = 0; (elemento = todosElementos[i]) != null; i++) {
+    var elementoClass = elemento.className;
+    if (elementoClass &&elementoClass.indexOf(className) != -1) {
+            resultados.push(elemento);
+    }
+}
+return resultados;
+```
+
+- 03-AdicionandoJavaScript/javascripts/rodus.js
+```javascript
+
+/*
+function quantidadeMudou() {
+    writeTotal(calculateTotalProducts());
+}
+function onDocumentoLoad() {
+    var textEdits = document.getElementsByClassName("quantity");
+    for(var i = 0; i < textEdits.length; i++) {
+        textEdits[i].onchange = quantidadeMudou;
+    }
+}
+*/
+function onDocumentoLoad() {
+    var textEdits = document.getElementsByClassName("quantity");
+    for(var i = 0; i < textEdits.length ; i++){
+        textEdits[i].onchange = function () {
+            writeTotal(calculateTotalProducts());
+        }
+    }
+}
+
+window.onload = onDocumentoLoad;
+```
 
 
 [Voltar ao Índice](#indice)

@@ -6,4 +6,5 @@
       <path value="C:\Users\josemalcher\Documents\01-SERVs\xampp_php7.2.1\php" />
     </include_path>
   </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
 </project>
