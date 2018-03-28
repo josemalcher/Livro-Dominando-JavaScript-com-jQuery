@@ -347,6 +347,41 @@ function onDocumentoLoad() {
 window.onload = onDocumentoLoad;
 ```
 
+#### 4.3 FUNÇÕES ANÔNIMAS E NOMEADAS
+
+```js
+function() {
+console.log("Nunca serei executado :'( ")
+}
+var olaMundo = function() {
+console.log("Serei executado =D");
+}
+olaMundo();
+```
+
+```js
+function quantidadeMudou() {
+    writeTotal(calculateTotalProducts());
+}
+function onDocumentLoad() {
+    var textEdits = document.getElementsByClassName("quantity");
+    for(var i = 0; i < texts.length; i++) {
+        textEdits[i].onchange = quantidadeMudou;
+    }
+}
+```
+Melhorando:
+```js
+function onDocumentLoad() {
+    var textEdits = document.getElementsByClassName("quantity");
+        for(var i = 0; i < texts.length; i++) {
+            textEdits[i].onchange = function() {
+            writeTotal(calculateTotalProducts());
+        };
+    }
+}
+```
+
 
 [Voltar ao Índice](#indice)
 
