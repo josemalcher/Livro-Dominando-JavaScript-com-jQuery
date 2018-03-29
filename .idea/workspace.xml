@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80462946-c9e5-4bf8-88f7-07d74c7432fd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/03-AdicionandoJavaScript/javascripts/jquery-3.3.1.min.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/03-AdicionandoJavaScript/cart.html" afterPath="$PROJECT_DIR$/03-AdicionandoJavaScript/cart.html" />
       <change beforePath="$PROJECT_DIR$/03-AdicionandoJavaScript/javascripts/rodus.js" afterPath="$PROJECT_DIR$/03-AdicionandoJavaScript/javascripts/rodus.js" />
@@ -22,11 +21,9 @@
           <file leaf-file-name="rodus.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/03-AdicionandoJavaScript/javascripts/rodus.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="524">
-                  <caret line="85" column="50" lean-forward="false" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
+                <state relative-caret-position="470">
+                  <caret line="108" column="34" lean-forward="true" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -109,16 +106,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/03-AdicionandoJavaScript/cart.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="primeiro_jquery.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/05-SimplifiqueComJQuery/primeiro_jquery.html">
               <provider selected="true" editor-type-id="text-editor">
@@ -136,8 +123,8 @@
           <file leaf-file-name="cart.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/03-AdicionandoJavaScript/cart.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="452">
-                  <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+                <state relative-caret-position="420">
+                  <caret line="49" column="71" lean-forward="false" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
                   <folding />
                 </state>
               </provider>
@@ -167,8 +154,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/05-SimplifiqueComJQuery/primeiro_jquery.html" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/03-AdicionandoJavaScript/cart.html" />
         <option value="$PROJECT_DIR$/03-AdicionandoJavaScript/javascripts/rodus.js" />
+        <option value="$PROJECT_DIR$/03-AdicionandoJavaScript/cart.html" />
       </list>
     </option>
   </component>
@@ -308,7 +295,7 @@
       <workItem from="1521049238171" duration="7654000" />
       <workItem from="1522185797309" duration="799000" />
       <workItem from="1522238141676" duration="235000" />
-      <workItem from="1522277332264" duration="9090000" />
+      <workItem from="1522277332264" duration="10071000" />
     </task>
     <task id="LOCAL-00001" summary="Retorno para Cap 3 - Revisões!">
       <created>1520883736625</created>
@@ -345,11 +332,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522294458706</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="5 - Simplifique com jQuery&#10;+ 5.6 PROGRAMANDO DE FORMA FUNCIONAL">
+      <created>1522300756302</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1522300756302</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20560000" />
+    <option name="totallyTimeSpent" value="21541000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="1090" width="1837" height="785" extended-state="0" />
@@ -416,7 +410,8 @@
     <MESSAGE value="Ajuste no GItignore" />
     <MESSAGE value="CAPÍTULO 4 - UM JAVASCRIPT DIFERENTE EM CADA NAVEGADOR" />
     <MESSAGE value="5 - Simplifique com jQuery&#10;+ 5.3 ENTENDA JQUERY EM CINCO MINUTOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="5 - Simplifique com jQuery&#10;+ 5.3 ENTENDA JQUERY EM CINCO MINUTOS" />
+    <MESSAGE value="5 - Simplifique com jQuery&#10;+ 5.6 PROGRAMANDO DE FORMA FUNCIONAL" />
+    <option name="LAST_COMMIT_MESSAGE" value="5 - Simplifique com jQuery&#10;+ 5.6 PROGRAMANDO DE FORMA FUNCIONAL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -514,7 +509,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -608,7 +603,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -709,7 +704,7 @@
         <state relative-caret-position="1062">
           <caret line="60" column="1" lean-forward="true" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -999,19 +994,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/03-AdicionandoJavaScript/cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+        <state relative-caret-position="420">
+          <caret line="49" column="71" lean-forward="false" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/03-AdicionandoJavaScript/javascripts/rodus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="85" column="50" lean-forward="false" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="470">
+          <caret line="108" column="34" lean-forward="true" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -46,6 +46,7 @@ for(var pos = 0; pos < produtos.length; pos++) {
     var price = moneyTxtFLoat(priceText);
     console.log(price);
 } */
+
 /*function calculateTotalProducts() {
     //var produtos = document.getElementsByClassName("produto");
     var produtos = $(".produto");
@@ -65,18 +66,17 @@ function calculateTotalProducts() {
     var produtos = $(".produto");
     var total = 0;
 
-    $(produtos).each(function (pos,produto) {
+    $(produtos).each(function (pos, produto) {
         var $produto = $(produto);
         var quantity = moneyTextToFloat($produto.find(".quantity").val());
         var price = moneyTextToFloat($produto.find(".price").text());
-        //console.log(produto);
-        console.log(price);
         total += quantity * price;
 
     });
     return total;
 
 }
+
 
 /*
 function quantidadeMudou() {
@@ -89,13 +89,21 @@ function onDocumentoLoad() {
     }
 }
 */
-function onDocumentoLoad() {
+
+
+/*function onDocumentoLoad() {
     var textEdits = document.getElementsByClassName("quantity");
     for(var i = 0; i < textEdits.length ; i++){
         textEdits[i].onchange = function () {
             writeTotal(calculateTotalProducts());
         }
     }
-}
+}*/
+$(document).ready(function () {
+    $(".quantity").change(function () {
+        writeTotal(calculateTotalProducts());
+    });
+});
 
-window.onload = onDocumentoLoad;
+
+//window.onload = onDocumentoLoad;
