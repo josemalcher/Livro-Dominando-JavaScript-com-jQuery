@@ -459,6 +459,17 @@ function onDocumentLoad() {
 </html>
 ```
 
+#### 6.3 DESASSOCIANDO EVENTOS
+
+```js
+$("#tarefa").off("keydown.primeiro", function() { //.on ou .off
+       console.log("Esse é o primeiro evento");
+   });
+   $("#tarefa").on("keydown.segundo", function() {
+       console.log("Esse é o segundo evento");
+   });
+```
+
 [Voltar ao Índice](#indice)
 
 ---

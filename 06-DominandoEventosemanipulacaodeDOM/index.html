@@ -20,13 +20,23 @@
 <script type="application/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script>
 
-    $("#tarefa").off(); // retirar os eventos associados ao elemento
+   /* $("#tarefa").off(); // retirar os eventos associados ao elemento
     $("#tarefa").keydown(function (event) {
         //console.log(event.which, String.fromCharCode(event.which));
         if(event.which === 13) {
             console.log("AQUI VAMOS ADD UMA TARAFA");
         }
-    })
+    });
+    $("#tarefa").keydown(function() {
+        console.log("Esse é o segundo evento");
+    });*/
+   $("#tarefa").off("keydown.primeiro", function() {
+       console.log("Esse é o primeiro evento");
+   });
+   $("#tarefa").on("keydown.segundo", function() {
+       console.log("Esse é o segundo evento");
+   });
+
 </script>
 </body>
 </html>
