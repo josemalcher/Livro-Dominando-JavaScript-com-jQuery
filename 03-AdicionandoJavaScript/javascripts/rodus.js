@@ -16,15 +16,23 @@ function floatToMoneyText(value) {
     return text.substr(0, text.length - 2) + "," + text.substr(-2);
 }
 
-function readTotal() {
+/*function readTotal() {
     var total = document.getElementById("total");
     return moneyTextToFloat(total.innerHTML);
+}*/
+function readTotal() {
+    var total = $("#total").text();
+    return moneyTextToFloat(total);
 }
 
 // 3.6 ALTERANDO O CAMPO DO TOTAL
-function writeTotal(value) {
+/*function writeTotal(value) {
     var total = document.getElementById("total");
     total.innerHTML = floatToMoneyText(value);
+}*/
+function writeTotal(value) {
+    var text = floatToMoneyText(value);
+    $("#total").text(text);
 }
 
 //writeTotal(3.143302);
@@ -38,26 +46,36 @@ for(var pos = 0; pos < produtos.length; pos++) {
     var price = moneyTxtFLoat(priceText);
     console.log(price);
 } */
-function calculateTotalProducts() {
-    var produtos = document.getElementsByClassName("produto");
-    var totalProdutos = 0;
-
-    for (var pos = 0; pos < produtos.length; pos++) {
-        var priceElements = produtos[pos].getElementsByClassName("price");
-        var priceText = priceElements[0].innerHTML;
-        var price = moneyTextToFloat(priceText);
-
-        var qtyElements = produtos[pos].getElementsByClassName("quantity");
-        var qtyText = qtyElements[0].value;
-        var quantity = moneyTextToFloat(qtyText);
-
-        var subtotal = quantity * price;
-
-        totalProdutos += subtotal;
-
+/*function calculateTotalProducts() {
+    //var produtos = document.getElementsByClassName("produto");
+    var produtos = $(".produto");
+    var total = 0;
+    for(var pos = 0; pos < produtos.length; pos++) {
+        var $produto = $(produtos[pos]);
+        var quantity = moneyTextToFloat(
+            $produto.find(".quantity").val());
+        var price = moneyTextToFloat(
+            $produto.find(".price").text());
+        total += quantity * price;
     }
+    return total;
+}*/
 
-    return totalProdutos;
+function calculateTotalProducts() {
+    var produtos = $(".produto");
+    var total = 0;
+
+    $(produtos).each(function (pos,produto) {
+        var $produto = $(produto);
+        var quantity = moneyTextToFloat($produto.find(".quantity").val());
+        var price = moneyTextToFloat($produto.find(".price").text());
+        //console.log(produto);
+        console.log(price);
+        total += quantity * price;
+
+    });
+    return total;
+
 }
 
 /*
