@@ -387,77 +387,103 @@ function onDocumentLoad() {
 
 ---
 
-## <a name="parte5"></a>
+## <a name="parte5">5 - Simplifique com jQuery</a>
+
+- 5.3 ENTENDA JQUERY EM CINCO MINUTOS
+```html
+<!doctype html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>5 - Simplifique com jQuery</title>
+</head>
+<body>
+
+<p class="par">Primeira linha</p>
+<p class="impar">Segunda linha</p>
+<input type="text" id="texto" class="par" value="um texto qualquer">
+
+<script type="application/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script>
+    $("p").css("background-color", "lightgreen");
+    $(".par").css("background-color", "lightblue");
+    $("#texto").css("color","white").val("ESSE É O NOVO TEXTO");
+</script>
+</body>
+</html>
+```
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte6">6 - Dominando eventos e manipulação de DOM com jQuery</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte6"></a>
+## <a name="parte7">7 - Não tenha medo do AJAX e do JSON</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte7"></a>
+## <a name="parte8">8 - Um gerenciador de tarefas com AJAX</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte8"></a>
+## <a name="parte9">9 - jQuery UI</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte9"></a>
+## <a name="parte10">10 - jQuery Mobile</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte10"></a>
+## <a name="parte11">11 - Orientação a objetos no JavaScript</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte11"></a>
+## <a name="parte12">12 - Um pouco de programação funcional</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte12"></a>
+## <a name="parte13">13 - Criando plugins para jQuery</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte32"></a>
+## <a name="parte14">14 - Dicas para usar melhor o jQuery</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte14"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-
-## <a name="parte15"></a>
+## <a name="parte15">15 - E o que vem agora?</a>
 
 
 [Voltar ao Índice](#indice)
