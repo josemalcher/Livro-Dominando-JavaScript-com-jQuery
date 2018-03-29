@@ -422,6 +422,42 @@ function onDocumentLoad() {
 
 ## <a name="parte6">6 - Dominando eventos e manipulação de DOM com jQuery</a>
 
+- Inicial:
+
+```html
+<!doctype html>
+<html lang="pt_Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>6 DOMINANDO EVENTOS E MANIPULAÇÃO DE DOM COM JQUERY</title>
+</head>
+<body>
+<h2>TODO List</h2>
+<input type="text" id="tarefa">
+<div id="tarefa-lista">
+    <div class="tarefa-item">
+        <div class="tarefa-texto">Comprar pão</div>
+        <div class="tarefa-delete"></div>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="application/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script>
+
+    $("#tarefa").off(); // retirar os eventos associados ao elemento
+    $("#tarefa").keydown(function (event) {
+        //console.log(event.which, String.fromCharCode(event.which));
+        if(event.which === 13) {
+            console.log("AQUI VAMOS ADD UMA TARAFA");
+        }
+    })
+</script>
+</body>
+</html>
+```
 
 [Voltar ao Índice](#indice)
 
