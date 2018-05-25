@@ -489,11 +489,117 @@ $(function(){
 
 ```
 
+#### 6.6 EDITANDO APENAS UM ITEM DE CADA VEZ
+
+
+
+
+
 [Voltar ao Índice](#indice)
 
 ---
 
 ## <a name="parte7">7 - Não tenha medo do AJAX e do JSON</a>
+
+```javascript
+var servico = "http://livro-capitulo07.herokuapp.com/hello";
+	$.get(servico, function(data) {
+		alert(data);
+	});
+```
+
+```javascript
+var parametros = {nome: "Caro Leitor"};
+var servico = "http://livro-capitulo07.herokuapp.com/hello";
+$.get(servico, parametros, function(data) {
+    alert(data);
+});
+```
+
+#### 7.5 O OBJETO JQXHR
+
+"esse objeto pode intermediar e controlar toda a conversação entre o seu código JavaScript e o servidor que vai nos fornecer os dados."
+
+"O objeto jqXHR permite que sejam definidos callbacks para  quando a requisição correu bem e para quando houve algum erro."
+
+```javascript
+var parametros = {nome: "Caro Leitor"};
+var servico = "http://livro-capitulo07.herokuapp.com/hello";
+var $xhr = $.get(servico, parametros);
+$xhr.done(function(data) {
+	alert(data);
+});
+```
+
+melhorando...
+
+```javascript
+var parametros = {nome: "Caro Leitor"};
+var servico = "http://livro-capitulo07.herokuapp.com/hello";
+$.get(servico, parametros)
+    .done(function(data) {
+alert(data);
+});
+```
+
+Erro proposital
+
+```javascript
+var servico = "http://livro-capitulo07.herokuapp.com/error";
+$.get(servico)
+.fail(function(data) {
+	alert(data.responseText);
+});
+```
+
+Lista de códigos de estado HTTP: https://pt.wikipedia.org/wiki/Lista_de_c%C3%B3digos_de_estado_HTTP 
+
+#### 7.6 E O QUE É O JSON?
+
+http://json.org
+
+```javascript
+var servico = "http://api.postmon.com.br/v1/cep/";
+var cep = "04101-300";
+function onCepDone(data) {
+    console.log("A Casa do Código fica na " + data.logradouro);
+}
+$.getJSON(servico + cep)
+.done(onCepDone);
+
+```
+
+Com Erro:
+
+```javascript
+var servico = "http://api.postmon.com.br/v1/cep/";
+var cep = "12345-789";
+function onCepDone(data) {
+    console.log("A Casa do Código fica na " + data.logradouro);
+}
+function onCepError(error) {
+    console.log("Erro: " + error.statusText)
+};
+$.getJSON(servico + cep)
+    .done(onCepDone)
+    .fail(onCepError);
+```
+
+Problemas com CORS
+
+A primeira é chamada de Cross-Origin Resource Sharing, e é
+habilitada quando o servidor que está nos fornecendo os dados
+insere o cabeçalho Access-Control-Allow-Origin: * na
+resposta HTTP. Essa é a forma mais limpa e padronizada de
+acessarmos outro domínio usando AJAX, mas tem uma série de
+problemas e limitações. A maior delas, sem dúvida, é quando
+estamos acessando um servidor que não inclui esse cabeçalho na
+resposta
+
+```
+--disable-web-security CHROME
+```
+
 
 
 [Voltar ao Índice](#indice)
